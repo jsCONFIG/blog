@@ -2,13 +2,12 @@
 <html lang="en-us">
   <head>
     <meta charset="UTF-8">
-    <title>BottleLiu by jsCONFIG</title>
+    <title>#{title} BottleLiu Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/normalize.css" media="screen">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/index.css" >
+    <link rel="stylesheet" type="text/css" href="../stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/github-light.css" media="screen">
   </head>
   <body>
     <section class="page-header">
@@ -18,22 +17,9 @@
 
     <section class="main-content">
       <h3>
-        <a id="文章列表" class="anchor" href="#%E6%96%87%E7%AB%A0%E5%88%97%E8%A1%A8" aria-hidden="true">
-        <span class="octicon octicon-link"></span>
-        </a>
-        文章列表
+        <a class="anchor" href="#top" aria-hidden="true"><span class="octicon octicon-link"></span></a>#{title}
       </h3>
-
-      <p>
-        <ul>
-          <li><a href="./page/better-web.html" target="_blank">web性能优化整理</a></li><li><a href="./page/article-build-tools.html" target="_blank">本blog文章新建工具</a></li>
-        </ul>
-
-      </p>
-
-      <footer class="site-footer">
-        <span class="site-footer-credits">By BottleLiu.</span>
-      </footer>
+      <p>#{content}</p>
 
     </section>
 

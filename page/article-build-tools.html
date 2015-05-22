@@ -2,13 +2,12 @@
 <html lang="en-us">
   <head>
     <meta charset="UTF-8">
-    <title>BottleLiu by jsCONFIG</title>
+    <title>本blog文章新建工具 BottleLiu Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/normalize.css" media="screen">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/index.css" >
+    <link rel="stylesheet" type="text/css" href="../stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/github-light.css" media="screen">
   </head>
   <body>
     <section class="page-header">
@@ -18,22 +17,16 @@
 
     <section class="main-content">
       <h3>
-        <a id="文章列表" class="anchor" href="#%E6%96%87%E7%AB%A0%E5%88%97%E8%A1%A8" aria-hidden="true">
-        <span class="octicon octicon-link"></span>
-        </a>
-        文章列表
+        <a class="anchor" href="#top" aria-hidden="true"><span class="octicon octicon-link"></span></a>本blog文章新建工具
       </h3>
+      <p>本工具基于node,使用"node createArticle.js"启动(可能需要sudo权限)，启动后，访问127.0.0.1/add 来添加文章，其中：<br>
+ * add.tpl为添加操作页面的模板<br>
+ * indextmp.tpl为首页模板<br>
+ * template.tpl为文章模板 <br>
+ * articlelist.json为已建文章列表<br>
 
-      <p>
-        <ul>
-          <li><a href="./page/better-web.html" target="_blank">web性能优化整理</a></li><li><a href="./page/article-build-tools.html" target="_blank">本blog文章新建工具</a></li>
-        </ul>
-
-      </p>
-
-      <footer class="site-footer">
-        <span class="site-footer-credits">By BottleLiu.</span>
-      </footer>
+所有文章将被创建到page目录下，同时将更新首页文章列表，并将创建记录存储在articlelist.json文件中.<br>
+删除操作只需将page路径下的文章删除，同时删除文章在acticlelist.json中的记录</p>
 
     </section>
 

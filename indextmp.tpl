@@ -26,7 +26,7 @@
 
       <p>
         <ul>
-          <li><a href="./page/better-web.html" target="_blank">web性能优化整理</a></li><li><a href="./page/article-build-tools.html" target="_blank">本blog文章新建工具</a></li>
+          #{list}
         </ul>
 
       </p>
