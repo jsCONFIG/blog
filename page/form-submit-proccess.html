@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>表单提交过程分析 BottleLiu Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="BottleLiu blog, 表单提交过程分析" />
+    <meta name="description" content="BottleLiu blog, 表单提交过程分析" />
+    <link rel="stylesheet" type="text/css" href="../stylesheets/normalize.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">BottleLiu</h1>
+      <h2 class="project-tagline">console.log(&#39;Hello world&#39;);</h2>
+    </section>
+
+    <section class="main-content">
+      <h3>
+        <a class="anchor" href="#top" aria-hidden="true"><span class="octicon octicon-link"></span></a>表单提交过程分析
+      </h3>
+      <p><p class="p1"><span class="s1">关于表单提交：</span></p><p class="p1"><span class="s1"><b><i>第一个过程</i></b>： successful controls;</span></p><p class="p1"><span class="s1">controls说明：</span></p><p class="p1"><span class="s1">推测应该是一个能被成功提交的表单控件，例如开启的checkboxes，同name的radio中被开启的那个。</span></p><p class="p1"><span class="s1">successful controls 是指可以有效的提交的控件。</span></p><p class="p1"><span class="s1">每一个 successful controls 均具备由其 name 属性（control name）及当前 value 属性（current value）所组成的“name/value”键值对，这些 successful controls 的键值对组成了 form data set。</span></p><p class="p1"><span class="s1">而 W3C 规定，定义在 FORM 元素内的 successful controls 必须拥有 name 属性。a. 如果一个表单里面包含多个提交按钮时，只有被激活的那个按钮才能提交成功；&nbsp;</span></p><p class="p2"><span class="s1"></span><br></p><p class="p1"><span class="s1"><b><i>第二个过程</i></b>：根据第一个过程的successful controls来创建表单数据集(form data set, 一个键值对序列)；</span></p><p class="p2"><span class="s1"></span><br></p><p class="p1"><span class="s1"><b><i>第三个过程</i></b>：根据form元素的enctype属性所指定的content type来对第二个过程的数据集进行编码；</span></p><p class="p2"><span class="s1"></span><br></p><p class="p1"><span class="s1"><b><i>第四个过程</i></b>：根据form元素的method属性指定的协议，将编码后的数据集发送到action属性指定的目标处理代理上。</span></p></p>
+
+    </section>
+
+            <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("BottleLiu Blog");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
+</html>

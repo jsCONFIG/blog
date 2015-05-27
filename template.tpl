@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <title>#{title} BottleLiu Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="BottleLiu blog, #{title}" />
+    <meta name="description" content="BottleLiu blog, #{title}" />
     <link rel="stylesheet" type="text/css" href="../stylesheets/normalize.css" media="screen">
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="../stylesheets/stylesheet.css" media="screen">
     <link rel="stylesheet" type="text/css" href="../stylesheets/github-light.css" media="screen">
   </head>

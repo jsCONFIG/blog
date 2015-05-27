@@ -10,6 +10,7 @@ var http = require('http');
 var path = require('path');
 var url  = require('url');
 var fs = require('fs');
+var existsArticle = require('./articlelist.json') || [];
 
 // 读取模板文件
 var template = '';
@@ -23,13 +24,6 @@ var indextmp = '';
 fs.readFile('./indextmp.tpl', function ( err, data) {
     if( !err ) {
         indextmp = data.toString('utf-8');
-    }
-});
-
-var existsArticle = {"list": []};
-fs.readFile('./articlelist.json', function ( err, data) {
-    if( !err ) {
-        existsArticle = JSON.parse(data.toString('utf-8') || '{"list": []}');
     }
 });
 
