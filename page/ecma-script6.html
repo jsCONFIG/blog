@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>ES6新特性说明 BottleLiu Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/normalize.css" media="screen">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="../stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">BottleLiu</h1>
+      <h2 class="project-tagline">console.log(&#39;Hello world&#39;);</h2>
+    </section>
+
+    <section class="main-content">
+      <h3>
+        <a class="anchor" href="#top" aria-hidden="true"><span class="octicon octicon-link"></span></a>ES6新特性说明
+      </h3>
+      <p><p class="p1"><span class="s1">1. 箭头函数(FF已支持)；</span></p>
+<p class="p1"><span class="s1">可看做是函数的一种，举例如下：</span></p>
+<p class="p1"><span class="s1">var fn = (x = 1, y = 1) =&gt; (x + y);</span></p>
+<p class="p1"><span class="s1">等效于：</span></p>
+<p class="p1"><span class="s1">var fn = (x = 1, y = 1) =&gt; {return (x + y);};</span></p>
+<p class="p1"><span class="s1">// var fn = function (x, y) {x = x || 1; y = y || 1; return x + y;}</span></p>
+<p class="p1"><span class="s1">// 无参数的情况</span></p>
+<p class="p1"><span class="s1">var sayHi = () =&gt; {return ‘Hi’;};</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">使用方法同传统的函数调用一样。</span></p>
+<p class="p3"><span class="s1"><b>关于this，箭头函数的this始终指向函数定义时的this.</b></span></p>
+<p class="p3"><span class="s1"><b>且其内部无[Construct]和属性原型，所以不能进行new 实例化操作</b></span></p>
+<p class="p4"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1">2. 增强的对象字面量形式：</span></p>
+<p class="p1"><span class="s1">var obj = {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span>__proto__: 可直接在构建时设置原型,</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span>// handler: handler的简写形式</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span>handler,</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span>// 方法定义</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span>toString () {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>// super调用，代表其继承类</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>return ‘d ‘ + super.toString();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span>},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span>// 动态设置属性名称</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span>[‘prop_’ + (() =&gt; 66)()]: 66</span></p>
+<p class="p1"><span class="s1">};</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">3. 模板字符串Template Strings</span></p>
+<p class="p1"><span class="s1">var content = ’string content.’;</span></p>
+<p class="p1"><span class="s1">`This is a string, which content is ${content}`</span></p>
+<p class="p1"><span class="s1">tempHandler`This is a string:${content}`;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">4. 解构：</span></p>
+<p class="p1"><span class="s1">var [a, b] = [1, 2];</span></p>
+<p class="p1"><span class="s1">等同于var a = 1, b = 2;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">var {var1: v1, var2: v2, varN: vNo, vDefault: vD = 4} = {var1: 1, var2: 2};</span></p>
+<p class="p1"><span class="s1">等同于</span></p>
+<p class="p1"><span class="s1">var v1 = 1, v2 = 2, vNo = undefined, vD = (typeof obj.vDefault != ‘undefined’)? obj.vDefault : 4;// 失效弱化</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">5. Default + Rest + Spread 默认值+多余参数组合+参数伸展</span></p>
+<p class="p1"><span class="s1">举例：</span></p>
+<p class="p1"><span class="s1">// 默认值类似于PHP</span></p>
+<p class="p1"><span class="s1">var fn = function (a, b = 3) {console.log(a + b);};</span></p>
+<p class="p1"><span class="s1">fn(1);// 4</span></p>
+<p class="p1"><span class="s1">// 多余参数组合</span></p>
+<p class="p1"><span class="s1">var fn = function (x, …y) {console.log(x + y);};</span></p>
+<p class="p1"><span class="s1">fn(1, 2, 3, 4); // 1 + 4 = 5</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">// 参数伸展</span></p>
+<p class="p1"><span class="s1">var fn = function (x, y, z) {return x + y + z;};</span></p>
+<p class="p1"><span class="s1">fn(…[1, 2, 3]);// 6</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">6. let与const操作符</span></p>
+<p class="p1"><span class="s1">两者都只在块级作用域内有效，其中let可看做是新的var操作符，用于声明块级作用域下的变量，const声明的是块级作用域的常量，声明之后不可再进行赋值，也不能进行let操作(常量，这点同PHP)。</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">7. for … of</span></p>
+<p class="p1"><span class="s1">例如：</span></p>
+<p class="p1"><span class="s1">var arr = [1, 2, 3]</span></p>
+<p class="p1"><span class="s1">for(var i of arr) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span>// xxx</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p1"><span class="s1">等同于：</span></p>
+<p class="p1"><span class="s1">for (var i = 0, aL = arr.length; i &lt; aL; i++) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span>// xxx</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p1"><span class="s1">To be continued...</span></p></p>
+
+    </section>
+
+            <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("BottleLiu Blog");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
+</html>
