@@ -11,16 +11,30 @@
     </style>
 </head>
 <body>
-1
+<div id="iii"></div>
     <script>
+    var lll = document.getElementById('iii');
     try{
         navigator.control.gesture(false);
     }
     catch(e){}
+    var flag;
+    document.addEventListener("touchstart", function (e){
+        flag = e.touches[0].pageX;
+    }, false);
+    document.addEventListener("touchend", function (e){
+        flag = undefined;
+    }, false);
     document.addEventListener("touchmove", function (e){
+        if (flag) {
+            var currentPageX = e.touches[0].pageX;
 
-           e.preventDefault();
-       }, false);
+            if (Math.abs(currentPageX - flag) > 30) {
+                lll.innerHTML = currentPageX + ' ' + flag + '<br>';
+                e.preventDefault();
+            }
+        }
+    }, false);
     </script>
 </body>
 </html>
