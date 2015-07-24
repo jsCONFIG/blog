@@ -29,7 +29,7 @@
         if (flag) {
             var currentPageX = e.touches[0].pageX;
 
-            if (Math.abs(currentPageX - flag) > 30) {
+            if (Math.abs(currentPageX - flag) > 5) {
                 lll.innerHTML = currentPageX + ' ' + flag + '<br>';
                 e.preventDefault();
             }
