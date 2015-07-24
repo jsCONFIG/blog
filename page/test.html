@@ -4,15 +4,21 @@
     <meta charset="UTF-8">
     <title>gesture</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <style>
+    body{
+        height: 1800px;
+    }
+    </style>
 </head>
 <body>
-
+1
     <script>
     try{
         navigator.control.gesture(false);
     }
     catch(e){}
     document.addEventListener("touchmove", function (e){
+
            e.preventDefault();
        }, false);
     </script>
