@@ -5,12 +5,16 @@
     <title>gesture</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 </head>
-<body>  
+<body>
+
     <script>
     try{
         navigator.control.gesture(false);
     }
     catch(e){}
+    document.addEventListener("touchmove", function (e){
+           e.preventDefault();
+       }, false);
     </script>
 </body>
 </html>
